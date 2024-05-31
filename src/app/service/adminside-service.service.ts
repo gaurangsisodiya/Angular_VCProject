@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { MissionApplication } from '../model/missionApplication.model';
 import { MissionTheme } from '../model/missionTheme.model';
 import { MissionSkill } from '../model/missionSkill.model';
+import { AddUserComponent } from '../admin-side/user/add-user/add-user.component';
 @Injectable({
   providedIn: 'root',
 })
@@ -17,13 +18,16 @@ export class AdminsideServiceService {
     public router: Router
   ) {}
   // apiUrl:string='http://localhost:63943/api';
-  apiUrl: string = 'http://localhost:56577/api';
-  imageUrl: string = 'http://localhost:56577';
+  apiUrl: string = 'http://localhost:5140/api';
+  imageUrl: string = 'http://localhost:5140';
 
   //User
   UserList(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/AdminUser/UserDetailList`);
   }
+
+
+  
   DeleteUser(userId: any) {
     return this.http.delete(
       `${this.apiUrl}/AdminUser/DeleteUserAndUserDetail/${userId}`

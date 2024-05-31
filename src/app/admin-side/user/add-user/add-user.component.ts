@@ -58,16 +58,21 @@ export class AddUserComponent implements OnInit {
     return this.registerForm.get('confirmPassword') as FormControl;
   }
   OnSubmit(){
+    console.log("clicked onsubmit");
+    console.log(this.registerForm.valid);
+    
 
       this.formValid = true;
       if(this.registerForm.valid)
       {
         let register = this.registerForm.value;
         register.userType = 'user';
+        register.userImage = '';
         this.service.registerUser(register).subscribe((data:any)=>{
+          
           if(data.result==1)
           {
-            //this.toastr.success(data.data);
+            // this.toastr.success(data.data);
             this.toast.success({detail:"SUCCESS",summary:data.data,duration:3000});
             setTimeout(() => {
               this.router.navigate(['userPage']);
