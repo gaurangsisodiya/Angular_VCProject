@@ -81,6 +81,8 @@ export class AddMissionComponent implements OnInit {
     this.service.CountryList().subscribe((data: any) => {
       if (data.result == 1) {
         this.countryList = data.data;
+        console.log(this.countryList);
+        
       } else {
         this.toast.error({ detail: "ERROR", summary: data.message, duration: 3000 });
       }

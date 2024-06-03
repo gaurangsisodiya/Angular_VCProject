@@ -30,6 +30,7 @@ export class AdminloginService {
     );
   }
   UpdateUser(data: user) {
+    console.log(data);
     return this.http.post(`${this.apiUrl}/UpdateUser`, data);
   }
 

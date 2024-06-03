@@ -66,7 +66,10 @@
                         <i class="fa fa-edit"></i>
                       </button>
                       <button type="button" class="btndelete">
-                        <i class="fa fa-remove" (click)="DeleteUser()"></i>
+                        <i
+                          class="fa fa-remove"
+                          (click)="DeleteUser(item.id)"
+                        ></i>
                       </button>
                     </td>
                   </tr>
@@ -138,7 +141,7 @@
         >
           <span class="Cancel"> Cancel</span>
         </button>
-        <button type="button" class="btnRemove" (click)="DeleteUser()">
+        <button type="button" class="btnRemove" (click)="DeleteUser(87)">
           <span class="remove">Delete</span>
         </button>
       </div>

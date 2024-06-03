@@ -40,9 +40,9 @@ export class UserComponent implements OnInit {
   CloseRemoveMissionModal(){
     this.deleteModal.hide();
   }
-  DeleteUser(){
-    this.service.DeleteUser(7).subscribe((data:any)=>{
-    // this.service.DeleteUser(this.userId).subscribe((data:any)=>{
+  DeleteUser(Id:any){
+    // this.service.DeleteUser(7).subscribe((data:any)=>{
+    this.service.DeleteUser(Id).subscribe((data:any)=>{
       if(data.result == 1)
       {
           this.toast.success({detail:"SUCCESS",summary:data.data,duration:3000});

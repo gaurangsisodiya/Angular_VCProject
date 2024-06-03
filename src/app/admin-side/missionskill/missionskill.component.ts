@@ -38,18 +38,24 @@ export class MissionskillComponent implements OnInit {
   }
 
  
+  ShowDeleteSkillModal(Id:any)
+  {
+    this.skillId = Id;
+    this.deleteSkillmodal.show();
+  }
   CloseDeleteSkillModal()
   {
     this.deleteSkillmodal.hide();
   }
   DeleteSkillModal(){
+    
     this.service.DeleteMissionSkill(this.skillId).subscribe((data:any)=>{
       if(data.result == 1)
       {
         this.toast.success({detail:"SUCCESS",summary:data.data,duration:3000});
         this.CloseDeleteSkillModal();
         setTimeout(() => {
-          this.route.navigate(['admin/missionSkill']);
+          window.location.reload();
         }, 1000);
       }
       else
