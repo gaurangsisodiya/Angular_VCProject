@@ -123,7 +123,7 @@ export class AddMissionComponent implements OnInit {
   OnSelectedImage(event: any) {
     const files = event.target.files;
     if (this.imageListArray.length > 5) {
-      return this.toast.error({ detail: "ERROR", summary: "Maximum 6 images can be added.", duration: 3000 });
+      return this.toast.error({ detail: "ERROR", summary: "Maximum 5 images can be added.", duration: 3000 });
     }
     if (files) {
       this.formData = new FormData();
@@ -157,6 +157,25 @@ export class AddMissionComponent implements OnInit {
       }
       let imgUrlList = imageUrl.map(e => e.replace(/\s/g, "")).join(",");
       value.missionImages = imgUrlList;
+      value.cityName = '',
+      value.countryName = '',
+      value.missionType = '',
+      value.missionStatus = '',
+      value.missionVideoUrl = '',
+      value.MissioSkillName = '',
+      value.MissionAvilability = '',
+      value.MissionApproveStatus = '',
+      value.missionThemeName = '',
+      value.missionDocuments = '',
+      value.missionDateStatus = '',
+      value.missionApplyStatus = '',
+      value.missionOrganizationDetail = '',
+      value.missionDeadLineStatus = '',
+      value.missionFavouriteStatus = '',
+      value.missionOrganizationName = '',
+
+      console.log(value);
+      
       this.service.AddMission(value).subscribe((data: any) => {
 
         if (data.result == 1) {

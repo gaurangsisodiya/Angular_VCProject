@@ -61,7 +61,7 @@ export class AdminsideServiceService {
     return this.http.get<MissionSkill[]>(`${this.apiUrl}/Mission/GetMissionSkillList`);
   }
   UploadImage(data: any) {
-    return this.http.post(`${this.apiUrl}/Common/UploadImage`,data);
+    return this.http.post(`${this.apiUrl}/Mission/UploadImage`,data);
   }
   UploadDoc(data: any) {
     return this.http.post(`${this.apiUrl}/Mission/UploadImage`,data);
