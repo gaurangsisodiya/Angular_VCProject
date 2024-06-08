@@ -127,7 +127,7 @@ export class UsereditprofileComponent implements OnInit {
     },err=>this.toast.error({detail:"ERROR",summary:err.message}));
   }
   GetUserSkill(){
-    this.service.GetUserSkill(this.loginUserId).subscribe((data:any)=>{debugger;
+    this.service.GetUserSkill(this.loginUserId).subscribe((data:any)=>{
       if(data.result == 1)
       {
         if(data.data.length > 0){
